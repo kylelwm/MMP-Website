@@ -1,0 +1,22 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.logo {
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.slide-image {
+	height: 500px;
+	width: auto;
+	max-width: 100%;
+}
+
+.carousel-control {
+	background-image: none !important;
+}
+
+.glyphicon-chevron-right::before, .glyphicon-chevron-left::before {
+	color: rgba(0, 0, 0, 0.5);
+}

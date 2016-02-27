@@ -1,0 +1,36 @@
+<!--<img src="assets/images/yeoman.png" alt="I'm Yeoman">-->
+    
+<div layout="column" layout-gt-md="row">
+
+  <div layout="column" layout-align="center center" flex="100" flex-order-gt-md="2" flex-gt-md="50">
+    <img class="logo" src="assets/mock/logo.png">
+    
+    <h3><strong>My Makan Place</strong></h3>
+
+    <h4>1355 Market Street, Suite 900</h4>
+    <h4>San Francisco, CA 94103</h4>
+
+    <h4>Opening Hours: 11 am - 12 am</h4>
+    <h4>Phone: +65 6515 4303</h4> 
+  </div>
+
+
+  <div flex="100" flex-order-gt-md="1" flex-gt-md="50">
+    <div class="col-xs-12">
+      <uib-carousel interval="3000">
+        <uib-slide ng-repeat="slide in main.slides" active="slide.active" ng-switch="slide.type">
+          <!-- Switch for types -->
+          <div ng-switch-when="image">
+            <img class="slide-image" ng-src="{{slide.data}}" style="margin:auto;">
+          </div>
+
+          <div ng-switch-when="video">
+            EMBEDDED YOUTUBE PLAYER
+          </div>
+
+        </uib-slide>
+      </uib-carousel>
+    </div>
+  </div>
+
+</div>

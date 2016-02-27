@@ -1,0 +1,70 @@
+<div layout="column" layout-gt-md="row">
+
+  <div class="padded-state" layout="column" layout-align="center center" layout-align-gt-md="start start" flex="100" flex-gt-md="50">
+		
+		<h1 class="state-title">Find us</h1>
+
+		<div layout-fill>
+
+			<iframe
+				class="map"
+				src="https://www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK
+	      &key=AIzaSyBlvkiGDVchvzhnaL9JpXDuzVM-WY6uTt0">
+	  	</iframe>
+  	</div>
+
+  </div>
+
+  <div class="padded-state" layout="column" layout-align="center center" layout-align-gt-md="start start" flex="100" flex-gt-md="50">
+
+    <h1 class="state-title">Leave us a message</h1>
+
+    <ng-form layout="column" layout-fill name="contactForm">
+
+    	<ng-form layout="column" layout-gt-md="row" name="personalDetails">
+	
+			  <md-input-container flex>
+			    <label>Name</label>
+			    <input name="name" ng-model="contactForm.data.name" required>
+			    <div ng-messages="personalDetails.name.$error" ng-show="personalDetails.name.$error.required && personalDetails.name.$dirty">
+			      <div ng-message="required">This is required</div>
+			    </div>
+			  </md-input-container>
+
+			  <md-input-container flex>
+			    <label>Phone</label>
+			    <input type="tel" name="number" ng-model="contactForm.data.number" required>
+			    <div ng-messages="personalDetails.number.$error" ng-show="personalDetails.number.$error.required && personalDetails.number.$dirty">
+			      <div ng-message="required">This is required</div>
+			    </div>
+			  </md-input-container>
+
+			  <md-input-container flex>
+			    <label>Email</label>
+			    <input type="email" name="email" ng-model="contactForm.data.email" required>
+			    <div ng-messages="personalDetails.email.$error" ng-show="personalDetails.email.$error.required && personalDetails.email.$dirty">
+			      <div ng-message="required">This is required</div>
+			    </div>
+			  </md-input-container>
+
+			</ng-form>
+
+			<ng-form>
+
+        <md-input-container class="md-block">
+          <label>Message</label>
+          <textarea ng-model="contactForm.data.message" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+
+			</ng-form>
+
+			<div layout="column" layout-gt-md="row" flex>
+				<md-button ng-click="sendMessage()" class="md-raised">Send</md-button>
+			</div>
+
+    </ng-form>
+
+
+  </div>
+
+</div>

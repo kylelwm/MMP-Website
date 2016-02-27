@@ -1,0 +1,41 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+@media screen and (min-width: 1280px) {
+	.narrow-state {
+		margin: 0 auto;
+		max-width: 70%;
+	}
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.state-title {
+	text-align: center;
+}
+
+.padded-state {
+	padding: 0px 15px;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'about/about.scss';
+@import 'book/book.scss';
+@import 'contact/contact.scss';
+@import 'main/main.scss';
+@import 'menu/menu.scss';
+@import '../components/footer/footer.scss';
+@import '../components/modal/modal.scss';
+// endinjector

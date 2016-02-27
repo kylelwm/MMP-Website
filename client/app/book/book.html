@@ -1,0 +1,80 @@
+<div class="narrow-state padded-state" layout="column">
+	<h1 class="state-title">Book with us now</h1>
+	
+	<ng-form layout="column" name="bookingForm">
+	
+		<h3>Reservation details</h3>
+
+		<ng-form layout="column" name="reservationDetails">
+				
+			<ng-form layout="row" name="reservationDateTime">
+
+				<md-datepicker class="date-picker" name="dateField" ng-model="bookingForm.data.date" md-placeholder="Date" required md-min-date="minDate"></md-datepicker>
+		  
+			  <md-input-container class="left-margin">
+			    <label>Time</label>
+			    <input name="time" ng-model="bookingForm.data.time" required>
+			    <div ng-messages="reservationDetails.time.$error" ng-show="reservationDetails.time.$error.required && reservationDetails.time.$dirty">
+			      <div ng-message="required">This is required</div>
+			    </div>
+			  </md-input-container>
+
+			</ng-form>
+
+		  <md-input-container class="short-input-gt-md">
+		    <label>Number of people</label>
+		    <input type="number" name="pax" ng-model="bookingForm.data.pax" required>
+		    <div ng-messages="reservationDetails.pax.$error" ng-show="reservationDetails.pax.$error.required && reservationDetails.pax.$dirty">
+		      <div ng-message="required">This is required</div>
+		    </div>
+		  </md-input-container>
+
+		</ng-form>
+
+		<h3>Personal details</h3>
+
+		<ng-form layout="column" layout-gt-md="row" name="personalDetails">
+	
+		  <md-input-container>
+		    <label>Name</label>
+		    <input name="name" ng-model="bookingForm.data.name" required>
+		    <div ng-messages="personalDetails.name.$error" ng-show="personalDetails.name.$error.required && personalDetails.name.$dirty">
+		      <div ng-message="required">This is required</div>
+		    </div>
+		  </md-input-container>
+
+		  <md-input-container class="left-margin-gt-md">
+		    <label>Phone</label>
+		    <input type="tel" name="number" ng-model="bookingForm.data.number" required>
+		    <div ng-messages="personalDetails.number.$error" ng-show="personalDetails.number.$error.required && personalDetails.number.$dirty">
+		      <div ng-message="required">This is required</div>
+		    </div>
+		  </md-input-container>
+
+		  <md-input-container class="left-margin-gt-md">
+		    <label>Email</label>
+		    <input type="email" name="email" ng-model="bookingForm.data.email" required>
+		    <div ng-messages="personalDetails.email.$error" ng-show="personalDetails.email.$error.required && personalDetails.email.$dirty">
+		      <div ng-message="required">This is required</div>
+		    </div>
+		  </md-input-container>
+
+		</ng-form>
+
+		<h3>Special requests</h3>
+
+		<ng-form name="optionalMessage">
+			<md-input-container class="md-block">
+				<label>Message (Optional)</label>
+				<textarea ng-model="bookingForm.data.message" rows="5" md-select-on-focus></textarea>
+			</md-input-container>
+		</ng-form>
+
+		<div layout="column" layout-gt-md="row" flex>
+			<md-button ng-click="makeBooking()" type="submit" class="md-raised">Book now</md-button>
+		</div>
+
+	</ng-form>
+
+
+</div>
